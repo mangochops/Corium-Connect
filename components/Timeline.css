@@ -1,0 +1,72 @@
+/* Center the timeline container on the page */
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust height as needed */
+}
+
+.timeline {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 800px; /* Adjust max-width as needed */
+}
+
+.timeline li {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-start {
+  position: relative;
+  text-align: center;
+}
+
+.timeline-box {
+  background: #fff;
+  border: 2px solid #000; /* Adjust color and thickness as needed */
+  border-radius: 50%;
+  display: inline-block;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.timeline-middle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-middle svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px; /* Adjust thickness as needed */
+  height: 100%;
+  background: #000; /* Adjust color as needed */
+  transform: translateX(-50%);
+}
+
+.timeline hr {
+  border: none;
+  border-top: 2px solid #000; /* Adjust color and thickness as needed */
+  margin: 0;
+  height: 2px;
+}
+
+.timeline-container {
+  padding: 0 20px; /* Add horizontal padding as needed */
+}
