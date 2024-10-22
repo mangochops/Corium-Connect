@@ -17,7 +17,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-10 bg-gray-100 text-gray-800">
+    <main className="flex flex-col items-center justify-between min-h-screen p-5 bg-gray-100 text-gray-800">
       {/* Navbar */}
       <header className="w-full">
         <Navbar />
