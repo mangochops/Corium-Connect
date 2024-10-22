@@ -14,7 +14,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="w-full flex items-center justify-between p-4 bg-transparent ">
+    <nav className="w-full flex items-center justify-between p-2 bg-transparent ">
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image
