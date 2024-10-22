@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar";
 import Image from "next/image";
 import { FaPalette, FaCode, FaMobileAlt, FaCloud, FaPlug, FaServer, FaTwitter, FaFacebookF, FaLinkedinIn } from 'react-icons/fa'; // Import the icons
 import Timeline from "@/components/timeline";
+import { Services } from "@/constants";
 // import {Carousel} from "@/components/socialproof";
 
 export default function Home() {
@@ -39,7 +40,7 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="lg:w-1/2 w-full flex justify-center items-center mb-10 lg:mb-0">
+        <div className="lg:w-1/2 w-full flex justify-center items-center mb-10 lg:mb-0 sm:hidden">
           <Image
             src="/corium_globe.png"
             alt="Hero Image"
@@ -83,14 +84,14 @@ export default function Home() {
       {/* Services Section */}
       <section className="w-full py-10 bg-gray-50">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {services.map((service, index) => (
+          {Services.map((service, index) => (
             <div key={index} className="flex flex-col items-center p-6 bg-white shadow-md rounded-lg">
               <div className="text-blue-600 mb-4">
                 {service.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-center text-gray-600">
-                We provide exceptional {service.title} tailored to your business needs.
+                 {service.description} 
               </p>
             </div>
           ))}
