@@ -121,33 +121,31 @@ export default function Home() {
 
       {/* Contact Us Section */}
       <section className="w-full py-10 flex justify-center items-center bg-gray-100">
-        <div className="bg-white w-full max-w-4xl flex shadow-lg rounded-lg overflow-hidden">
+        <div className="bg-white w-full max-w-4xl flex flex-col lg:flex-row shadow-lg rounded-lg overflow-hidden">
           {/* Left Section with Logo and Info */}
-          <div className="w-1/3 bg-gradient-to-b from-gray-50 to-gray-200 p-8 ">
-            <Image src="/corium_connect.png" width={80} height={80} alt="Token Logo" className="h-16 w-16 " />
+          <div className="w-full lg:w-1/3 bg-gradient-to-b from-gray-50 to-gray-200 p-8 hidden lg:block">
+            <Image src="/corium_connect.png" width={80} height={80} alt="Token Logo" className="h-16 w-16" />
             <div className="">
               <h4 className="text-2xl font-bold mb-4">GET IN TOUCH</h4>
               <p className="text-sm text-gray-600 mb-8">
                 We will answer your questions and problems 24/7
               </p>
             </div>
-
           </div>
 
-
           {/* Right Section with Contact Form */}
-          <div className="w-2/3 p-8">
+          <div className="w-full lg:w-2/3 p-8">
             <form>
-              <div className="flex space-x-4 mb-4">
+              <div className="flex flex-col sm:flex-row sm:space-x-4 mb-4">
                 <input
                   type="text"
                   placeholder="First Name"
-                  className="w-1/2 p-3 border border-gray-300 rounded"
+                  className="w-full sm:w-1/2 p-3 border border-gray-300 rounded mb-4 sm:mb-0"
                 />
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="w-1/2 p-3 border border-gray-300 rounded"
+                  className="w-full sm:w-1/2 p-3 border border-gray-300 rounded"
                 />
               </div>
               <div className="mb-4">
@@ -180,6 +178,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
       <footer className="w-full text-center py-4">
         <div className="flex justify-center space-x-6 mb-2">
