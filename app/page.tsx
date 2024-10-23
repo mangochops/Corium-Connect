@@ -7,14 +7,7 @@ import { Services } from "@/constants";
 // import {Carousel} from "@/components/socialproof";
 
 export default function Home() {
-  const services = [
-    { icon: <FaPalette size={40} />, title: "UI/UX Design" },
-    { icon: <FaCode size={40} />, title: "Web Development" },
-    { icon: <FaMobileAlt size={40} />, title: "Mobile App Development" },
-    { icon: <FaCloud size={40} />, title: "Cloud Solutions" },
-    { icon: <FaPlug size={40} />, title: "API Integration" },
-    { icon: <FaServer size={40} />, title: "DevOps Services" },
-  ];
+
 
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-3 bg-gray-100 text-gray-800">

@@ -14,7 +14,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="w-full flex items-center justify-between p-2 bg-transparent ">
+    <nav className="w-full flex items-center justify-between p-2 bg-transparent relative">
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image
@@ -30,21 +30,37 @@ const Navbar = () => {
       {/* Hamburger Icon */}
       <div className="md:hidden flex items-center">
         <button onClick={toggleMenu} aria-label="Toggle Menu">
-          <FaBars className="text-gray-800 text-2xl" />
+          {!isMenuOpen ? (
+            <FaBars className="text-gray-800 text-2xl" />
+          ) : (
+            <FaTimes className="text-gray-800 text-2xl" />
+          )}
         </button>
       </div>
 
       {/* Navigation Links */}
-      <div className={`md:flex ${isMenuOpen ? "block" : "hidden"} absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent md:shadow-none shadow-md md:flex-row flex-col items-center md:space-x-8 space-y-4 md:space-y-0 p-4 md:p-0`}>
-        {/* Close Icon */}
-        <div className="md:hidden flex items-center justify-end w-full">
-          <button onClick={toggleMenu} aria-label="Close Menu">
-            <FaTimes className="text-gray-800 text-2xl" />
-          </button>
-        </div>
+      <div
+        className={cn(
+          "md:flex md:items-center md:space-x-8",
+          "fixed md:static top-0 left-0 w-full h-full bg-white md:bg-transparent md:shadow-none",
+          "flex-col md:flex-row items-center justify-center",
+          isMenuOpen ? "flex" : "hidden",
+          "transition-all ease-in-out duration-300 md:transition-none"
+        )}
+      >
+        {/* Close Icon on Mobile */}
+        {isMenuOpen && (
+          <div className="absolute top-5 right-5 md:hidden">
+            <button onClick={toggleMenu} aria-label="Close Menu">
+              <FaTimes className="text-gray-800 text-2xl" />
+            </button>
+          </div>
+        )}
 
+        {/* Navigation Links */}
         {navItems.map((item) => {
-          const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
+          const isActive =
+            pathname === item.route || pathname.startsWith(`${item.route}/`);
 
           return (
             <Link
@@ -55,6 +71,7 @@ const Navbar = () => {
                 { "bg-sky-950 text-white": isActive }
               )}
               aria-label={item.label}
+              onClick={() => setIsMenuOpen(false)} // Close menu when a link is clicked
             >
               {item.label}
             </Link>
@@ -66,4 +83,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
